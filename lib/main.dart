@@ -13,22 +13,32 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final euroList = [
+    'Allemagne', 'Belgique', 'Autriche', 'Bulgarie', 'Chypre', 'Croatie', 'Danemark',
+    'Espagne', 'Estonie', 'Finlande', 'France', 'Grèce', 'Hongrie', 'Irlande',
+    'Italie', 'Lettonie', 'Lituanie', 'Luxembourg', 'Malte', 'Pays-Bas', 'Pologne',
+    'Tchéquie', 'Roumanie', 'Slovaquie', 'Slovénie', 'Suède',
+    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text('My first app'),
       ),
       body: Center(
-        child: Stack(
-          children: [
-            Container(width: 250, height: 250, color: Colors.grey,),
-            Container(width: 150, height: 150, color: const Color.fromARGB(255, 117, 117, 117),),
-            Container(width: 50, height: 50, color: const Color.fromARGB(255, 73, 73, 73),),
-          ],
+        child: Container(
+          color: Colors.grey[200],
+          width: 250,
+          height: 450,
+          child: ListView(
+            children: [
+              for (var country in euroList)
+                Text(country, style: TextStyle(fontSize: 25),)
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: const Text('OK'),
+        child: const Icon(Icons.add),
       ),
     );
   }
