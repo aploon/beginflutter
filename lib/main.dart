@@ -1,48 +1,66 @@
+import 'package:beginflutter/pages/details_page.dart';
+import 'package:beginflutter/pages/home_page.dart';
+import 'package:beginflutter/utils/helper.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: HomePage(),
-    ),
-  );
+  runApp(const OrangeValleyApp());
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class OrangeValleyApp extends StatelessWidget {
+  const OrangeValleyApp({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final euroList = [
-    'Allemagne', 'Belgique', 'Autriche', 'Bulgarie', 'Chypre', 'Croatie', 'Danemark',
-    'Espagne', 'Estonie', 'Finlande', 'France', 'Grèce', 'Hongrie', 'Irlande',
-    'Italie', 'Lettonie', 'Lituanie', 'Luxembourg', 'Malte', 'Pays-Bas', 'Pologne',
-    'Tchéquie', 'Roumanie', 'Slovaquie', 'Slovénie', 'Suède',
-    ];
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('My first app'),
-      ),
-      body: Center(
-        child: Container(
-          color: Colors.grey[200],
-          width: 250,
-          height: 450,
-          child: ListView(
-            children: [
-              for (var country in euroList)
-                Text(country, style: TextStyle(fontSize: 25),)
-            ],
-          ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+      
     );
   }
 }
+
+
+
+// class CustomCheckBox extends StatefulWidget {
+//   const CustomCheckBox({ Key? key }) : super(key: key);
+
+//   @override
+//   State<CustomCheckBox> createState() => _CustomCheckBoxState();
+// }
+
+// class _CustomCheckBoxState extends State<CustomCheckBox> {
+
+//   var isChecked;
+//   var msg;
+
+//   @override
+//   void initState() {
+//     super.initState();
+
+//     isChecked = false;
+//     msg = 'Non activé';
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Row(
+//       children: [
+//         Checkbox(value: isChecked, onChanged: (newValue){
+//           setState(() {
+//             isChecked = newValue;
+//             if(isChecked) {
+//               msg = 'Activé';
+//             } else {
+//               msg = 'Non activé';
+//             }
+//           });
+//         }),
+//         Text(msg, style: const TextStyle(fontSize: 25),)
+//       ],
+//     );
+//   }
+// }
 
 // class MyApp extends StatelessWidget {
 //   const MyApp({Key? key}) : super(key: key);
