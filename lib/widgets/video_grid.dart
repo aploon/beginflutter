@@ -44,6 +44,7 @@ class _VideoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Padding(
       // mettre de l'espace autour de chaque élément de la GridView
       padding: const EdgeInsets.all(10.0),
